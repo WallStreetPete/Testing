@@ -8,3 +8,6 @@
 
 - How do I contribute?
   Follow CONTRIBUTING.md: fork, create a branch, make changes, and open a pull request. There is currently no test suite or linter configured.
+
+- Where do I report bugs?
+  Open a GitHub issue.

@@ -5,3 +5,4 @@
 - Lead with action: show the command or step first; add context after if needed.
 - Keep formatting simple: headings, bullet lists, and fenced code blocks; avoid heavy formatting.
 - Stay consistent: match repo terms, filenames, and command syntax; make examples copy-pasteable.
+- Use sentence case in headings: capitalize only the first word and proper nouns.

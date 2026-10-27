@@ -17,7 +17,7 @@ This document explains quick, repeatable steps to check your changes locally bef
 Option A — Python 3 static server (simple):
 
   # from the repo root
-  python3 -m http.server 8000
+  python3 -m http.server 8000 --bind 127.0.0.1
 
 Then open http://localhost:8000/home.html (or the page you changed) in your browser.
 
@@ -80,9 +80,12 @@ Optional: use `act` to run GitHub Actions locally if you want to reproduce CI be
 
 ## Troubleshooting
 
-- Blank page: open DevTools Console to see JS errors or missing resources.
-- Relative paths broken: prefer running a local server (see above) instead of opening files directly.
-- Port in use: change the server port.
+- Blank page or missing assets: open the browser DevTools Console and Network panels to inspect JavaScript errors, 404s, or other failed resource loads.
+- Relative paths broken: prefer running a local server (see the "Preview the static site" section) instead of opening files directly via file://.
+- Server not reachable or you want to limit exposure: bind the Python server to localhost (example: `python3 -m http.server 8000 --bind 127.0.0.1`) or verify the server address.
+- Port in use: change the server port (for example, 8001) or stop the process using the port (tools: lsof/netstat).
+- Tests or linters failing locally: run them with verbose output and confirm dependencies (package.json / requirements.txt) match the environment.
+
 
 ---
 
